@@ -14,9 +14,9 @@ from typing import Tuple
 from datetime import datetime
 
 
-__author__ = "Your Name"
+__author__ = "Thomas Laubrock"
 __version__ = "0.1.0"
-__license__ = "MIT"
+__license__ = "GPL 3"
 
 SOCKETTIMEOUT = 20
 
