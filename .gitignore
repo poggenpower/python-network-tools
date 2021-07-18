@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# no backups
+*.py.bak
+
+# no vscode stettings
+.vscode/
