@@ -135,7 +135,7 @@ def main():
         fail('Invalid port number: ' + str(remote_port))
 
     try:
-        if socket.has_dualstack_ipv6():
+        if socket.has_ipv6:
             listen_socket = socket.socket(socket.AF_INET6, socket.SOCK_DGRAM)
             listen_socket.setsockopt(socket.IPPROTO_IPV6, socket.IPV6_V6ONLY, 0)
         else:
@@ -147,6 +147,7 @@ def main():
         listen_socket_receiver.daemon = True
         listen_socket_receiver.start()
     except Exception as e:
+        logging.exception("")
         fail(f"Failed to bind Server on port {str(local_port)}: {e}")
 
     logging.info(f"All set, listening on {str(local_port)}")

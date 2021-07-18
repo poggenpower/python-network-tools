@@ -1,26 +1,35 @@
 # systemd service file to start python service
 
+# change for your needs
+# copy to  /etc/systemd/system/
+# 
+
 [Unit]
 Description=Python Service
-Wants=network.target # wait for network
+# wait for network
+Wants=network.target 
 # After=mosquitto.service # uncomment to wait for other service 
 # Documentation=pending
 
 [Service]
 Type=simple
-# Run as normal pi user - change to the user name you wish to run Node-RED as
-User=py # make sure user exist, e.g adduser --system --group py
-Group=py # make sure group exist
-WorkingDirectory=/opt/scripts # change to the location of the python script
+# Run as normal user
+# make sure user/group exist, e.g adduser --system --group py
+User=py
+Group=py
+# change to the location of the python script
+WorkingDirectory=/opt/scripts 
 
 Nice=5
-ExecStart=/usr/bin/python3 python_service_script.py # make sure it is this right path to python
+# make sure it is this right path to python
+ExecStart=/usr/bin/python3 python_service_script.py 
 # Use SIGINT to stop
 # KillSignal=SIGINT
 # Auto restart on crash
 Restart=on-failure
 # Tag things in the log
-SyslogIdentifier=My_Python_Service # change to something meaningful
+# change to something meaningful
+SyslogIdentifier=My_Python_Service 
 #StandardOutput=syslog
 
 [Install]

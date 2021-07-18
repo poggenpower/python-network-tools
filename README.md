@@ -32,6 +32,11 @@ optional arguments:
   -r REMOTE_PORT, --remote-port REMOTE_PORT
   ```
 
+### inspired by / similar projects
+
+https://github.com/wangyu-/tinyPortMapper written in C++ but no DNS support
+https://github.com/EtiennePerot/misc-scripts/blob/master/udp-relay.py no IPv6 support 
+
 ## Fake TLS Echo Server / Client
 TLS Server with SNI support. Generates X509 Certificates with proper SAN (Subject Alternative Names) on the fly.
 Echos back the input string in a JSON wrapper
